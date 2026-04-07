@@ -1,4 +1,5 @@
 import styles from './Filter.module.scss';
+import FilterSection from '../FilterSection/FilterSection'
 
 type Data = Record<string, string[]>;
 
@@ -19,17 +20,11 @@ const Filter = () => {
 
       <div className={styles.sections}>
         {Object.entries(data).map(([title, options]) => (
-          <div className={styles.section}>
-            <div className={styles.title}>{title}</div>
-            <div className={styles.options}>
-              {options.map((value) => (
-                <label key={value} className={styles.option}>
-                  <input type="checkbox" />
-                  <span>{value}</span>
-                </label>
-              ))}
-            </div>
-          </div>
+          <FilterSection 
+            key={title} 
+            title={title} 
+            items={options} 
+          />
         ))}
       </div>
 
