@@ -1,0 +1,22 @@
+.wrapper {
+  padding: 2px 4px 4px 8px; // spacing 100, 150, 150, 200
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: gray; // use tokens
+  }
+
+  &:active {
+    opacity: 0.6; // use tokens
+  }
+}
+
+.flag {
+  margin-right: 2px; // spacing 100
+}
+
+.label {
+  color: white;
+  // use tokens
+}
