@@ -31,7 +31,13 @@ $transition-length: 0.4s;
 }
 
 .flag {
-  margin-right: 2px; // spacing 100
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 2px;
 }
 
 .label {

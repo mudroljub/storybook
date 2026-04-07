@@ -20,7 +20,13 @@ const FilterButton = ({ countries = [], isDisabled = false, onClick, onClose, la
       className={cn(styles.wrapper, { [styles.disabled]: isDisabled })}
       onClick={isDisabled ? undefined : onClick}
     >
-      {countries.map(country => <img src={getFlag('china')} className={styles.flag} key={country} alt={country} />)}
+      {countries.map(country => (
+        <div
+          key={country}
+          className={styles.flag}
+          style={{ backgroundImage: `url(${getFlag(country)})` }}
+        />
+      ))}
 
       {label && <span className={styles.label}>{label}</span>}
 
