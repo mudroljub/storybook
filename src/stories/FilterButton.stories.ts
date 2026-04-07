@@ -27,12 +27,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
-  args: {
+const args = {
     countries,
     onClick: (() => console.log('clicked')) as any,
     onClose: (() => console.log('reset')) as any,
     label: 'Text',
+  }
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Default: Story = {
+  args,
+};
+
+export const Disabled: Story = {
+  args: {
+    ...args,
+    isDisabled: true,
   },
 };

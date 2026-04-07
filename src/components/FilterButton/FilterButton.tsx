@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import flag from './flag.png'
 import styles from './FilterButton.module.scss'
 
@@ -13,14 +14,17 @@ interface FilterButtonProps {
   isDisabled?: boolean;
 }
 
-const FilterButton = ({ countries = [], isDisabled = true, onClick, onClose, label }: FilterButtonProps) => {
+const FilterButton = ({ countries = [], isDisabled = false, onClick, onClose, label }: FilterButtonProps) => {
   return (
-    <div className={styles.wrapper} onClick={onClick}>
-      {countries.map(country => <img src={getFlag('china')} className={styles.flag} alt="flag" />)}
+    <div
+      className={cn(styles.wrapper, { [styles.disabled]: isDisabled })}
+      onClick={isDisabled ? undefined : onClick}
+    >
+      {countries.map(country => <img src={getFlag('china')} className={styles.flag} key={country} alt={country} />)}
 
       {label && <span className={styles.label}>{label}</span>}
 
-      <button onClick={onClose}>x</button>
+      <button className={styles.close} onClick={isDisabled ? undefined : onClose}>x</button>
     </div>
   )
 }
