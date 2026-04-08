@@ -1,14 +1,38 @@
 import styles from './Filter.module.scss';
 import FilterSection from '../FilterSection/FilterSection'
 
-type Data = [string, string[]][];
+export type FilterItem = {
+  key: string
+};
+export type DataMap = Map<string, FilterItem[]>
 
-const data: Data = [
-  ['Tier', ['I','II','III','IV','V','VI','VII','VIII','IX','X','★']],
-  ['Type', ['CV','BB','CA','DD']],
-  ['Nation', ['cn','uk','es','de','jp','us','eu']],
-  ['Rarity', ['Common','Rare','Elite','Premium']]
-];
+const data: DataMap = new Map([
+  [
+    'Tier',
+    [
+      { key: 'I' }, { key: 'II' }, { key: 'III' }, { key: 'IV' }, { key: 'V' },
+      { key: 'VI' }, { key: 'VII' }, { key: 'VIII' }, { key: 'IX' }, { key: 'X' }, { key: '★' }
+    ]
+  ],
+  [
+    'Type',
+    [
+      { key: 'CV' }, { key: 'BB' }, { key: 'CA' }, { key: 'DD' }
+    ]
+  ],
+  [
+    'Nation',
+    [
+      { key: 'cn' }, { key: 'uk' }, { key: 'es' }, { key: 'de' }, { key: 'jp' }, { key: 'us' }, { key: 'eu' }
+    ]
+  ],
+  [
+    'Rarity',
+    [
+      { key: 'Common' }, { key: 'Rare' }, { key: 'Elite' }, { key: 'Premium' }
+    ]
+  ]
+])
 
 const Filter = () => {
   return (
@@ -22,7 +46,7 @@ const Filter = () => {
       </div>
 
       <div className={styles.sections}>
-        {data.map(([title, options]) => (
+        {Array.from(data).map(([title, options]) => (
           <FilterSection
             key={title}
             title={title}

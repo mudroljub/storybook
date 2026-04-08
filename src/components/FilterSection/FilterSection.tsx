@@ -1,18 +1,20 @@
+import { FilterItem } from '../Filter/Filter';
 import styles from './FilterSection.module.scss';
 
 const maxRows = 5;
 
-const chunkArray = (arr: string[], size: number): string[][] => {
-  const chunks: string[][] = [];
+const chunkArray = (arr: FilterItem[], size: number): FilterItem[][] => {
+  const chunks: FilterItem[][] = []
+  
   for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
-  }
-  return chunks;
-};
+    chunks.push(arr.slice(i, i + size))
+  }  
+  return chunks
+}
 
 interface SectionProps {
   title: string;
-  items: string[];
+  items: FilterItem[];
 }
 
 const FilterSection: React.FC<SectionProps> = ({ title, items }) => {
@@ -26,9 +28,9 @@ const FilterSection: React.FC<SectionProps> = ({ title, items }) => {
         {columns.map((col, colIdx) => (
           <div key={colIdx} className={styles.column}>
             {col.map((item) => (
-              <label key={item} className={styles.label}>
+              <label key={item.key} className={styles.label}>
                 <input type="checkbox" />
-                <span>{item}</span>
+                <span>{item.key}</span>
               </label>
             ))}
           </div>
