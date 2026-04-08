@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import styles from './FilterControls.module.scss'
 import FilterButton from '../../FilterButton/FilterButton'
 
-// TODO: remove mock data
+// TODO: remove mock data after implement state
 const filterButtonArgs = {
-  countries: ['Greece', 'Canada', 'Mexico', 'Russia', 'Serbia', 'China'],
+  nations: ["cn", "uk", "es", "de"],
   onClick: (() => console.log('clicked')) as any,
   onClose: (() => console.log('reset')) as any,
 }

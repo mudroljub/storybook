@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 
 import FilterButton from '../components/FilterButton/FilterButton';
 
-const countries = ['Greece', 'Canada', 'Mexico', 'Russia', 'Serbia', 'China']
+const nations = ["cn", "uk", "es", "de"]
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -18,7 +18,7 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    countries: { control: 'multi-select', options: countries },
+    nations: { control: 'multi-select', options: nations },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const args = {
-    countries,
+    nations,
     onClick: (() => console.log('clicked')) as any,
     onClose: (() => console.log('reset')) as any,
     label: 'Text',

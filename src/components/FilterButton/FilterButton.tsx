@@ -1,26 +1,22 @@
 import cn from 'classnames';
-import flag from './flag.png'
 import styles from './FilterButton.module.scss'
-
-const getFlag = (country: string) => {
-  return flag;
-}
+import { getFlag } from './utils';
 
 interface FilterButtonProps {
-  countries: string[];
+  nations: string[];
   onClick: () => void;
   onClose: () => void;
   label?: string;
   isDisabled?: boolean;
 }
 
-const FilterButton = ({ countries = [], isDisabled = false, onClick, onClose, label }: FilterButtonProps) => {
+const FilterButton = ({ nations = [], isDisabled = false, onClick, onClose, label }: FilterButtonProps) => {
   return (
     <div
       className={cn(styles.wrapper, { [styles.disabled]: isDisabled })}
       onClick={isDisabled ? undefined : onClick}
     >
-      {countries.map(country => (
+      {nations.map(country => (
         <div
           key={country}
           className={styles.flag}
