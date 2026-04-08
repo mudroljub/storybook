@@ -1,12 +1,8 @@
 import styles from './Filter.module.scss';
 import FilterSection from '../FilterSection/FilterSection'
+import { FilterData } from './types';
 
-export type FilterItem = {
-  key: string
-};
-export type DataMap = Map<string, FilterItem[]>
-
-const data: DataMap = new Map([
+const data: FilterData = new Map([
   [
     'Tier',
     [

@@ -1,16 +1,8 @@
-import { FilterItem } from '../Filter/Filter';
+import { FilterItem } from '../Filter/types';
 import styles from './FilterSection.module.scss';
+import { chunkArray } from './utils';
 
-const maxRows = 5;
-
-const chunkArray = (arr: FilterItem[], size: number): FilterItem[][] => {
-  const chunks: FilterItem[][] = []
-  
-  for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size))
-  }  
-  return chunks
-}
+const MAX_ROWS = 5;
 
 interface SectionProps {
   title: string;
@@ -18,7 +10,7 @@ interface SectionProps {
 }
 
 const FilterSection: React.FC<SectionProps> = ({ title, items }) => {
-  const columns = chunkArray(items, maxRows);
+  const columns = chunkArray(items, MAX_ROWS);
 
   return (
     <div className={styles.section}>
