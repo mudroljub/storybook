@@ -1,26 +1,28 @@
 import React from 'react'
-import classNames from 'classnames'
 import styles from './Triangle.module.scss'
 
 interface TriangleProps {
   isDown?: boolean
-  className?: string
 }
 
-const Triangle: React.FC<TriangleProps> = ({
-  isDown = false,
-  className
+const Triangle: React.FC<TriangleProps> = ({ 
+  isDown = false, 
 }) => {
-  const triangleClasses = classNames(
-    styles.triangle,
-    {
-      [styles.down]: isDown,
-      [styles.up]: !isDown
-    },
-    className
-  )
+  const upPath = "M11 0.5 L21.5 11.5 H0.5 Z"
+  const downPath = "M11 11.5 L0.5 0.5 H21.5 Z"
 
-  return <div className={triangleClasses} />
+  return (
+    <svg 
+      viewBox="0 0 22 12" 
+      className={styles.triangle}
+      preserveAspectRatio="none"
+    >
+      <path 
+        d={isDown ? downPath : upPath} 
+        className={styles.path}
+      />
+    </svg>
+  )
 }
 
 export default Triangle
