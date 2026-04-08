@@ -5,3 +5,8 @@ export type FilterItem = {
 };
 
 export type FilterData = Map<string, FilterItem[]>
+
+export enum FilterPosition {
+  TOP = 'TOP',
+  BOTTOM = 'BOTTOM'
+}

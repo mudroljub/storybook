@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import Filter from '../components/Filter/Filter'
-import { FilterData } from '../components/Filter/types'
+import { FilterData, FilterPosition } from '../components/Filter/types'
 
 const data: FilterData = new Map([
   [
@@ -41,9 +41,15 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    position: {
+      options: Object.values(FilterPosition),
+      control: { type: 'select' },
+    },
+  },
   args: {
     data,
+    position: FilterPosition.TOP
   },
 } satisfies Meta<typeof Filter>
 
