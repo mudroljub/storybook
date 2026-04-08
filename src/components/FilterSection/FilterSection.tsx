@@ -20,7 +20,8 @@ const FilterSection: React.FC<SectionProps> = ({ title, items }) => {
 
   return (
     <div className={styles.section}>
-      <h4 className={styles.title}>{title}</h4>
+      <div className={styles.title}>{title}</div>
+
       <div className={styles.columnsWrapper}>
         {columns.map((col, colIdx) => (
           <div key={colIdx} className={styles.column}>
