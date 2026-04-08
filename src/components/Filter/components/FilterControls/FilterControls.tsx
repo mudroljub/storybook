@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './FilterControls.module.scss'
-import FilterButton from '../../FilterButton/FilterButton'
+import FilterButton from '../../../FilterButton/FilterButton'
 
 // TODO: remove mock data after implement state
 const filterButtonArgs = {

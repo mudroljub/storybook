@@ -1,6 +1,6 @@
-import { FilterItem } from '../types';
+import { FilterItem } from '../../types';
 import styles from './FilterSection.module.scss';
-import { chunkArray } from '../utils';
+import { chunkArray } from '../../utils';
 
 const MAX_ROWS = 5;
 

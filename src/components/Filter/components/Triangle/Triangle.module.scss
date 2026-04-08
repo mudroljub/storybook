@@ -1,0 +1,18 @@
+$size: 16px;
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-left: 40px; // TODO: use tokens
+
+  &.up {
+    border-width: 0 $size $size $size;
+    border-color: transparent transparent #546266 transparent;
+  }
+
+  &.down {
+    border-width: $size $size 0 $size;
+    border-color: #546266 transparent transparent transparent;
+  }
+}

@@ -1,6 +1,6 @@
 import styles from './FilterTable.module.scss';
 import FilterSection from '../FilterSection/FilterSection'
-import { FilterData } from '../types';
+import { FilterData } from '../../types';
 
 interface FilterProps {
   data: FilterData;

@@ -1,5 +1,6 @@
-import FilterControls from "./FilterControls/FilterControls";
-import FilterTable from "./FilterTable/FilterTable";
+import FilterControls from "./components/FilterControls/FilterControls";
+import FilterTable from "./components/FilterTable/FilterTable";
+import Triangle from "./components/Triangle/Triangle";
 import { FilterData, FilterPosition } from "./types";
 
 interface FilterProps {
@@ -17,10 +18,11 @@ const Filter = ({ data, position }: FilterProps) => {
     />
   )
   const table = <FilterTable key="table" data={data} />
+  const triangle = <Triangle key="triangle" isDown={position === FilterPosition.TOP} />
 
   const content = position === FilterPosition.TOP 
-    ? [table, controls] 
-    : [controls, table]
+    ? [table, triangle, controls] 
+    : [controls, triangle, table]
 
   return <div>{content}</div>
 }
