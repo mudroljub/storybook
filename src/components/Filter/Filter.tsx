@@ -1,5 +1,5 @@
 import styles from './Filter.module.scss';
-import FilterSection from '../FilterSection/FilterSection'
+import FilterSection from './FilterSection/FilterSection'
 import { FilterData } from './types';
 
 interface FilterProps {

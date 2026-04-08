@@ -1,4 +1,4 @@
-import { FilterItem } from "../Filter/types"
+import { FilterItem } from "./types"
 
 export const chunkArray = (arr: FilterItem[], size: number): FilterItem[][] => {
   const chunks: FilterItem[][] = []
