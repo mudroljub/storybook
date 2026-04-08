@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import Filter from '../components/Filter/Filter'
+import FilterTable from '../components/Filter/FilterTable'
 import { FilterData } from '../components/Filter/types'
 
 const data: FilterData = new Map([
@@ -35,8 +35,8 @@ const data: FilterData = new Map([
 ])
 
 const meta = {
-  title: 'Example/Filter',
-  component: Filter,
+  title: 'Example/FilterTable',
+  component: FilterTable,
   parameters: {
     layout: 'centered',
   },
@@ -45,7 +45,7 @@ const meta = {
   args: {
     data,
   },
-} satisfies Meta<typeof Filter>
+} satisfies Meta<typeof FilterTable>
 
 export default meta
 type Story = StoryObj<typeof meta>

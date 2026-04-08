@@ -1,4 +1,4 @@
-import styles from './Filter.module.scss';
+import styles from './FilterTable.module.scss';
 import FilterSection from './FilterSection/FilterSection'
 import { FilterData } from './types';
 
@@ -6,7 +6,7 @@ interface FilterProps {
   data: FilterData;
 }
 
-const Filter = ({ data }: FilterProps) => {
+const FilterTable = ({ data }: FilterProps) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -38,4 +38,4 @@ const Filter = ({ data }: FilterProps) => {
   );
 };
 
-export default Filter
+export default FilterTable
