@@ -1,5 +1,7 @@
 export type FilterItem = {
-  key: string
+  key: string,
+  label?: string,
+  imgSrc?: string,
 };
 
 export type FilterData = Map<string, FilterItem[]>

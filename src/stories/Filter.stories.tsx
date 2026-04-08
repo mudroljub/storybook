@@ -14,7 +14,10 @@ const data: FilterData = new Map([
   [
     'Type',
     [
-      { key: 'CV' }, { key: 'BB' }, { key: 'CA' }, { key: 'DD' }
+      { key: 'CV', label: 'Aircraft Carrier' },
+      { key: 'BB', label: 'Battleship' },
+      { key: 'CA', label: 'Cruiser' },
+      { key: 'DD', label: 'Destroyer' }
     ]
   ],
   [

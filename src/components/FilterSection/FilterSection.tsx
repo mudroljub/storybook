@@ -22,7 +22,7 @@ const FilterSection: React.FC<SectionProps> = ({ title, items }) => {
             {col.map((item) => (
               <label key={item.key} className={styles.label}>
                 <input type="checkbox" />
-                <span>{item.key}</span>
+                <span>{item.label || item.key}</span>
               </label>
             ))}
           </div>
