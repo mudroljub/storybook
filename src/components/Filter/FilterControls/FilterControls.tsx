@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import styles from './FilterControls.module.scss'
 
 interface FilterControlsProps {
-  onSearchChange: (value: string) => void
   onShowFiltersClick: () => void
-  onResetAll: () => void
+  onSearchChange: (value: string) => void
+  onReset: () => void
 }
 
 const FilterControls: React.FC<FilterControlsProps> = ({
   onSearchChange,
   onShowFiltersClick,
-  onResetAll
+  onReset
 }) => {
   const [searchValue, setSearchValue] = useState('')
 
@@ -22,7 +22,6 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 
   return (
     <div className={styles.container}>
-      {/* GLAVNI RED */}
       <div className={styles.mainRow}>
         <div className={styles.leftSection}>
           <button className={styles.actionButton} onClick={onShowFiltersClick}>
@@ -56,19 +55,16 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         </div>
       </div>
 
-      {/* RED ZA TAGOVE */}
       <div className={styles.tagsRow}>
         <span className={styles.activeFiltersText}>III, VII-X</span>
 
         <div className={styles.iconTags}>
-          {/* Ovde će ići tvoje ikonice/zastave na osnovu selektovanih filtera */}
-          {/* Primer placeholder-a: */}
           <span style={{color: 'red', fontWeight: 'bold'}}>🇨🇳</span>
           <span style={{color: 'blue'}}>🇪🇺</span>
           <span style={{color: 'gold'}}>☭</span>
         </div>
 
-        <button className={styles.resetButton} onClick={onResetAll}>
+        <button className={styles.resetButton} onClick={onReset}>
           Reset All
         </button>
       </div>
