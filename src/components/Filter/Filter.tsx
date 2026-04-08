@@ -2,35 +2,11 @@ import styles from './Filter.module.scss';
 import FilterSection from '../FilterSection/FilterSection'
 import { FilterData } from './types';
 
-const data: FilterData = new Map([
-  [
-    'Tier',
-    [
-      { key: 'I' }, { key: 'II' }, { key: 'III' }, { key: 'IV' }, { key: 'V' },
-      { key: 'VI' }, { key: 'VII' }, { key: 'VIII' }, { key: 'IX' }, { key: 'X' }, { key: '★' }
-    ]
-  ],
-  [
-    'Type',
-    [
-      { key: 'CV' }, { key: 'BB' }, { key: 'CA' }, { key: 'DD' }
-    ]
-  ],
-  [
-    'Nation',
-    [
-      { key: 'cn' }, { key: 'uk' }, { key: 'es' }, { key: 'de' }, { key: 'jp' }, { key: 'us' }, { key: 'eu' }
-    ]
-  ],
-  [
-    'Rarity',
-    [
-      { key: 'Common' }, { key: 'Rare' }, { key: 'Elite' }, { key: 'Premium' }
-    ]
-  ]
-])
+interface FilterProps {
+  data: FilterData;
+}
 
-const Filter = () => {
+const Filter = ({ data }: FilterProps) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
