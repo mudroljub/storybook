@@ -1,0 +1,142 @@
+/* FilterControls.module.scss */
+
+$bg-color: rgba(20, 20, 20, 0.8);
+$text-color-primary: #e0e0e0;
+$text-color-secondary: #aaaaaa;
+$border-color: #444444;
+$input-bg: rgba(255, 255, 255, 0.05);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background-color: $bg-color;
+  color: $text-color-primary;
+}
+
+.mainRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  .actionButton, .divider, .checkboxLabel {
+    margin-right: 15px;
+  }
+
+  .checkboxLabel {
+    margin-right: 0;
+  }
+}
+
+.actionButton {
+  background-color: transparent;
+  border: none;
+  color: $text-color-secondary;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  
+  &:hover {
+    color: $text-color-primary;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: $border-color;
+}
+
+.checkboxLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  color: $text-color-secondary;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+}
+
+.rightSection {
+  width: 300px;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $input-bg;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+
+  .searchIcon {
+    color: $text-color-secondary;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+
+  .searchInput {
+    background-color: transparent;
+    border: none;
+    color: $text-color-primary;
+    width: 100%;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #666;
+    }
+  }
+}
+
+.tagsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.activeFiltersText {
+  color: #888;
+  margin-right: 15px;
+}
+
+.iconTags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  span, img {
+    margin-right: 6px;
+  }
+}
+
+.resetButton {
+  background-color: transparent;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: auto;
+  
+  &:hover {
+    color: white;
+  }
+}
