@@ -1,0 +1,37 @@
+.parent {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  min-height: 30px;
+}
+
+.span {
+  background-color: white;
+  display: block;
+  width: 4px;
+  height: 16px;
+  margin-right: 2px;
+  transform-origin: center;
+  animation: wave 1s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.span:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1.5);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scaleY(0.5);
+    opacity: 1;
+  }
+}
